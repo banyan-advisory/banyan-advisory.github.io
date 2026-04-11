@@ -1,5 +1,8 @@
 baseurl: ''
-exclude: ['README.md']
+exclude:
+  - README.md
+  - vendor
+  - .bundle
 permalink: pretty
 title: 'Banyan Advisory'
 
