@@ -1,146 +1,108 @@
 ---
 title: Transactions
 layout: default
-bodyClass: page-testimonials-list
+bodyClass: page-transactions
 ---
 
-<div class="container pt-5 pb-5 pt-md-7 pb-md-7">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <h2 class="title-3 text-dark mb-4">Technology transactions</h2>
+{% assign tech_recent_count = site.data.tech_transactions | size %}
+{% assign tech_promoter_count = site.data.promoter_tech_transactions | size %}
+{% assign healthcare_recent_count = site.data.healthcare_transactions | size %}
+{% assign healthcare_promoter_count = site.data.promoter_healthcare_transactions | size %}
+{% assign other_count = site.data.other_transactions | size %}
+{% assign total_transactions = tech_recent_count | plus: tech_promoter_count | plus: healthcare_recent_count | plus: healthcare_promoter_count | plus: other_count %}
+
+<div id="transactions-top" class="container transactions-hero pt-5 pb-4 pt-md-7">
+  <div class="row">
+    <div class="col-12 col-lg-9">
+      <p class="transactions-kicker">Representative Mandates</p>
+      <h1>Transactions</h1>
+      <p class="transactions-subtitle">
+        A cross-sector track record covering technology, healthcare &amp; life sciences, and other growth-oriented businesses.
+      </p>
+    </div>
+    <div class="col-12 col-lg-3">
+      <div class="transactions-total">
+        <span>{{ total_transactions }}+</span>
+        <small>disclosed transactions</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container transactions-toolbar">
+  <div class="transactions-jump">
+    <a href="#sector-technology">Technology</a>
+    <a href="#sector-healthcare">Healthcare</a>
+    <a href="#sector-other">Other</a>
+  </div>
+  <div class="transactions-filter" aria-label="Filter sectors">
+    <button type="button" class="is-active" data-sector-filter="all">All sectors</button>
+    <button type="button" data-sector-filter="technology">Technology</button>
+    <button type="button" data-sector-filter="healthcare">Healthcare</button>
+    <button type="button" data-sector-filter="other">Other</button>
+  </div>
+</div>
+
+<section id="sector-technology" class="container transaction-section pt-4 pb-5" data-sector="technology">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between align-items-end mb-3 flex-wrap">
+      <h2 class="title-3 text-dark mb-2">Technology Transactions</h2>
+      <a class="section-back-link" href="#transactions-top">Back to top</a>
     </div>
     <div class="col-12">
-      <h4 class="title-4 text-dark mb-5">Recent transactions</h4>
+      <h3 class="transactions-subheading">Recent transactions</h3>
     </div>
     {% for feature in site.data.tech_transactions %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
-      <div class="feature">
-        {% if feature.image1 %}<div class="feature-image"><img alt="{{ feature.client1 }}"
-            src="{{ feature.image1 }}" /></div> 
-            {% elsif feature.client1 %} <h2 class="feature-title">{{ feature.client1 }}</h2>
-            {% endif %}
-        {% if feature.image2 %}<div class="feature-image"><img alt="{{ feature.client2 }}" src="{{ feature.image2 }}" />
-        </div>
-        {% elsif feature.client2 %} <h2 class="feature-title">{{ feature.client2 }}</h2> {% endif %}
-        <div><h4 class="feature-content">{{ feature.service }}</h4></div>
-        {% if feature.description %}<div class="feature-content">{{ feature.description }}</div>{% endif %}
-        {% if feature.role %}<div><h5 class="feature-content">{{ feature.role }}</h5></div> {% endif %}
-        {% if feature.date %}<div><h5 class="feature-content">{{ feature.date }}</h5></div> {% endif %}
-      </div>
+      {% include transaction-card.html item=feature %}
     </div>
     {% endfor %}
-    <div class="col-12">
-      <h4 class="title-4 text-dark mb-5">Promoter transactions</h4>
+    <div class="col-12 mt-3">
+      <h3 class="transactions-subheading">Promoter transactions</h3>
     </div>
     {% for feature in site.data.promoter_tech_transactions %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
-      <div class="feature">
-        {% if feature.image1 %}<div class="feature-image"><img alt="{{ feature.client1 }}"
-            src="{{ feature.image1 }}" /></div>
-        {% elsif feature.client1 %} <h2 class="feature-title">{{ feature.client1 }}</h2>
-        {% endif %}
-        {% if feature.image2 %}<div class="feature-image"><img alt="{{ feature.client2 }}"
-            src="{{ feature.image2 }}" />
-        </div>
-        {% elsif feature.client2 %} <h2 class="feature-title">{{ feature.client2 }}</h2> {% endif %}
-        <div>
-          <h4 class="feature-content">{{ feature.service }}</h4>
-        </div>
-        {% if feature.description %}<div class="feature-content">{{ feature.description }}</div>{% endif %}
-        {% if feature.role %}<div><h5 class="feature-content">{{ feature.role }}</h5></div> {% endif %}
-        {% if feature.date %}<div><h5 class="feature-content">{{ feature.date }}</h5></div> {% endif %}
-      </div>
+      {% include transaction-card.html item=feature %}
     </div>
     {% endfor %}
   </div>
-</div>
+</section>
 
-<div class="container pt-5 pb-5 pt-md-7 pb-md-7">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <h2 class="title-3 text-dark mb-4">Healthcare and Lifesciences transactions</h2>
+<section id="sector-healthcare" class="container transaction-section pt-4 pb-5" data-sector="healthcare">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between align-items-end mb-3 flex-wrap">
+      <h2 class="title-3 text-dark mb-2">Healthcare &amp; Lifesciences Transactions</h2>
+      <a class="section-back-link" href="#transactions-top">Back to top</a>
     </div>
     <div class="col-12">
-      <h4 class="title-4 text-dark mb-5">Recent transactions</h4>
+      <h3 class="transactions-subheading">Recent transactions</h3>
     </div>
     {% for feature in site.data.healthcare_transactions %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
-      <div class="feature">
-        {% if feature.image1 %}<div class="feature-image"><img alt="{{ feature.client1 }}" src="{{ feature.image1 }}" />
-        </div>
-        {% elsif feature.client1 %} <h2 class="feature-title">{{ feature.client1 }}</h2>
-        {% endif %}
-        {% if feature.image2 %}<div class="feature-image"><img alt="{{ feature.client2 }}" src="{{ feature.image2 }}" />
-        </div>
-        {% elsif feature.client2 %} <h2 class="feature-title">{{ feature.client2 }}</h2> {% endif %}
-        <div>
-          <h4 class="feature-content">{{ feature.service }}</h4>
-        </div>
-        {% if feature.description %}<div class="feature-content">{{ feature.description }}</div>{% endif %}
-        {% if feature.role %}<div>
-          <h5 class="feature-content">{{ feature.role }}</h5>
-        </div> {% endif %}
-        {% if feature.date %}<div>
-          <h5 class="feature-content">{{ feature.date }}</h5>
-        </div> {% endif %}
-      </div>
+      {% include transaction-card.html item=feature %}
     </div>
     {% endfor %}
-    <div class="col-12">
-      <h4 class="title-4 text-dark mb-5">Promoter transactions</h4>
+    <div class="col-12 mt-3">
+      <h3 class="transactions-subheading">Promoter transactions</h3>
     </div>
     {% for feature in site.data.promoter_healthcare_transactions %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
-      <div class="feature">
-        {% if feature.image1 %}<div class="feature-image"><img alt="{{ feature.client1 }}" src="{{ feature.image1 }}" />
-        </div>
-        {% elsif feature.client1 %} <h2 class="feature-title">{{ feature.client1 }}</h2>
-        {% endif %}
-        {% if feature.image2 %}<div class="feature-image"><img alt="{{ feature.client2 }}" src="{{ feature.image2 }}" />
-        </div>
-        {% elsif feature.client2 %} <h2 class="feature-title">{{ feature.client2 }}</h2> {% endif %}
-        <div>
-          <h4 class="feature-content">{{ feature.service }}</h4>
-        </div>
-        {% if feature.description %}<div class="feature-content">{{ feature.description }}</div>{% endif %}
-        {% if feature.role %}<div>
-          <h5 class="feature-content">{{ feature.role }}</h5>
-        </div> {% endif %}
-        {% if feature.date %}<div>
-          <h5 class="feature-content">{{ feature.date }}</h5>
-        </div> {% endif %}
-      </div>
+      {% include transaction-card.html item=feature %}
     </div>
     {% endfor %}
   </div>
-</div>
+</section>
 
-<div class="container pt-5 pb-5 pt-md-7 pb-md-7">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <h2 class="title-3 text-dark mb-4">Other transactions</h2>
+<section id="sector-other" class="container transaction-section pt-4 pb-6" data-sector="other">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between align-items-end mb-3 flex-wrap">
+      <h2 class="title-3 text-dark mb-2">Other Transactions</h2>
+      <a class="section-back-link" href="#transactions-top">Back to top</a>
     </div>
     {% for feature in site.data.other_transactions %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
-      <div class="feature">
-        {% if feature.image1 %}<div class="feature-image"><img alt="{{ feature.client1 }}" src="{{ feature.image1 }}" />
-        </div>
-        {% elsif feature.client1 %} <h2 class="feature-title">{{ feature.client1 }}</h2>
-        {% endif %}
-        {% if feature.image2 %}<div class="feature-image"><img alt="{{ feature.client2 }}" src="{{ feature.image2 }}" />
-        </div>
-        {% elsif feature.client2 %} <h2 class="feature-title">{{ feature.client2 }}</h2> {% endif %}
-        <div>
-          <h4 class="feature-content">{{ feature.service }}</h4>
-        </div>
-        {% if feature.description %}<div class="feature-content">{{ feature.description }}</div>{% endif %}
-        {% if feature.role %}<div>
-          <h5 class="feature-content">{{ feature.role }}</h5>
-        </div> {% endif %}
-        {% if feature.date %}<div>
-          <h5 class="feature-content">{{ feature.date }}</h5>
-        </div> {% endif %}
-      </div>
+      {% include transaction-card.html item=feature %}
     </div>
     {% endfor %}
-</div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+{% assign item = include.item %}
+<div class="feature transaction-card">
+  <div class="transaction-parties">
+    {% if item.image1 %}
+    <div class="feature-image">
+      <img alt="{{ item.client1 }}" src="{{ item.image1 }}" />
+    </div>
+    {% elsif item.client1 %}
+    <h3 class="transaction-party">{{ item.client1 }}</h3>
+    {% endif %}
+
+    {% if item.image2 %}
+    <div class="feature-image">
+      <img alt="{{ item.client2 }}" src="{{ item.image2 }}" />
+    </div>
+    {% elsif item.client2 %}
+    <h3 class="transaction-party">{{ item.client2 }}</h3>
+    {% endif %}
+  </div>
+
+  {% if item.service %}
+  <p class="transaction-service">{{ item.service }}</p>
+  {% endif %}
+
+  {% if item.description %}
+  <p class="transaction-description">{{ item.description }}</p>
+  {% endif %}
+
+  {% if item.role %}
+  <p class="transaction-meta"><strong>Role:</strong> {{ item.role }}</p>
+  {% endif %}
+
+  {% if item.date %}
+  <p class="transaction-meta"><strong>Date:</strong> {{ item.date }}</p>
+  {% endif %}
+</div>

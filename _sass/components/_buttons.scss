@@ -23,3 +23,16 @@
     text-decoration: none;
   }
 }
+
+.button-secondary {
+  background: transparent;
+  border: 1px solid $primary;
+  color: $primary;
+  box-shadow: none;
+  &:hover {
+    color: #fff;
+    background: $primary;
+    border-color: $primary;
+    box-shadow: none;
+  }
+}

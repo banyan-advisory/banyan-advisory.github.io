@@ -15,6 +15,100 @@
     background-size: 60%;
     background-position: 100% -70px;
   }
+
+  .home-hero {
+    .home-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: $font-weight-bold;
+      color: darken($secondary, 28%);
+      margin-bottom: 10px;
+    }
+    .home-subtitle {
+      color: darken($secondary, 26%);
+      font-size: 1.12rem;
+      max-width: 700px;
+    }
+    .home-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  .home-proof-strip {
+    margin-top: -20px;
+    margin-bottom: 10px;
+    .proof-item {
+      border: 1px solid #dcdcdc;
+      background: rgba(255, 255, 255, 0.86);
+      border-radius: 4px;
+      padding: 14px;
+      height: 100%;
+    }
+    .proof-value {
+      color: $primary;
+      font-size: 1.6rem;
+      font-weight: $font-weight-bold;
+      line-height: 1.2;
+    }
+    .proof-label {
+      color: darken($secondary, 18%);
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+    }
+  }
+
+  .home-overview {
+    p {
+      color: darken($secondary, 26%);
+    }
+  }
+
+  .home-pathways {
+    border: 1px solid #dcdcdc;
+    background: rgba(255, 255, 255, 0.86);
+    border-radius: 4px;
+    padding: 20px;
+    h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+      color: darken($secondary, 24%);
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: $primary;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom-color: $primary;
+        }
+      }
+    }
+  }
+
+  .home-cta-panel {
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+    background: #fff;
+    padding: 24px;
+    p {
+      color: darken($secondary, 20%);
+      margin-bottom: 14px;
+    }
+  }
+
   .call {
     position: relative;
     overflow: hidden;

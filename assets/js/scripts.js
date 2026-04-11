@@ -29,3 +29,29 @@ if (menuTrigger && menuContainer) {
     });
   }
 }
+
+var sectorFilterButtons = document.querySelectorAll('[data-sector-filter]');
+var transactionSections = document.querySelectorAll('.transaction-section[data-sector]');
+
+if (sectorFilterButtons.length && transactionSections.length) {
+  var setSectorFilter = function (sector) {
+    for (var i = 0; i < sectorFilterButtons.length; i++) {
+      var button = sectorFilterButtons[i];
+      var isActive = button.getAttribute('data-sector-filter') === sector;
+      button.classList.toggle('is-active', isActive);
+    }
+
+    for (var j = 0; j < transactionSections.length; j++) {
+      var section = transactionSections[j];
+      var matchesSector = section.getAttribute('data-sector') === sector;
+      var shouldShow = sector === 'all' || matchesSector;
+      section.style.display = shouldShow ? '' : 'none';
+    }
+  };
+
+  for (var k = 0; k < sectorFilterButtons.length; k++) {
+    sectorFilterButtons[k].addEventListener('click', function () {
+      setSectorFilter(this.getAttribute('data-sector-filter'));
+    });
+  }
+}
