@@ -15,4 +15,68 @@
     background-size: 60%;
     background-position: 100% -110px;
   }
+
+  .services-hero {
+    .services-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: $font-weight-bold;
+      color: darken($secondary, 28%);
+      margin-bottom: 10px;
+    }
+
+    .services-subtitle {
+      color: darken($secondary, 24%);
+      font-size: 1.1rem;
+      max-width: 720px;
+    }
+
+    .services-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  .services-overview p {
+    color: darken($secondary, 24%);
+  }
+
+  .services-highlights {
+    border: 1px solid #dcdcdc;
+    background: rgba(255, 255, 255, 0.86);
+    border-radius: 4px;
+    padding: 20px;
+    height: 100%;
+
+    h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+      color: darken($secondary, 24%);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        margin-bottom: 10px;
+        color: $primary;
+      }
+    }
+  }
+
+  .services-cta-panel {
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+    background: #fff;
+    padding: 24px;
+    p {
+      color: darken($secondary, 20%);
+      margin-bottom: 14px;
+    }
+  }
 }
