@@ -113,6 +113,10 @@ $button-width: 35px;
         position: relative;
         color: $color-link;
         text-decoration: none;
+        &:focus-visible {
+          outline: 2px solid $white;
+          outline-offset: 4px;
+        }
         overflow: hidden;
         &:hover:after,
         &:focus:after,
@@ -131,6 +135,10 @@ $button-width: 35px;
           background: $color-link;
           transition: 0.35s;
         }
+      }
+      &.active a,
+      a.current {
+        font-weight: $font-weight-bold;
       }
     }
   }

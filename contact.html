@@ -1,7 +1,7 @@
 ---
 title: Contact
 layout: default
-bodyClass: page-home
+bodyClass: page-contact
 ---
 
 <div class="intro intro-small">
@@ -13,10 +13,10 @@ bodyClass: page-home
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container contact-page pb-6">
   <div class="row">
-    <div class="col-12 col-md-8">
-      <ul>
+    <div class="col-12 col-lg-8">
+      <ul class="contact-list">
         <!-- <li><strong>Phone: </strong>{{ site.data.contact.phone }}</li> -->
         <li><strong>Email: </strong><a href="mailto:{{ site.data.contact.email }}">
             {{ site.data.contact.email }}</a></li>
@@ -24,9 +24,15 @@ bodyClass: page-home
         <li><strong>Address: </strong>{{ site.data.contact.address }}</li>
         {% endif %}
       </ul>
+      <div class="contact-map">
       <iframe
+        title="Banyan Advisory office location"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.630288487367!2d78.4203526143294!3d17.429521488053368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb912c22ed7a39%3A0x2c0fc78d18697ad9!2sBanyan+Advisory!5e0!3m2!1sen!2sin!4v1556610333733!5m2!1sen!2sin"
-        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        frameborder="0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </div>

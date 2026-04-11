@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
+  {% assign page_title = page.title | default: site.title %}
+  {% assign meta_description = page.description | default: site.description | default: "Banyan Advisory is an investment banking firm focused on private equity syndication, mergers and acquisitions advisory, investor relations, and strategic finance." %}
+  <title>{{ page_title | escape }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
+  <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/favicon.png' | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page_title | escape }}">
+  <meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" href="{{site.baseurl}}/images/favicon.png">
   <link href="{{site.baseurl}}/assets/css/style.css" rel="stylesheet">
 </head>

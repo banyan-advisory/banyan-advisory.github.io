@@ -5,6 +5,7 @@ exclude:
   - .bundle
 permalink: pretty
 title: 'Banyan Advisory'
+description: 'Investment banking advisory for private equity syndication, mergers and acquisitions, investor relations, and strategic finance.'
 
 collections:
   services:
