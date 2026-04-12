@@ -2,15 +2,40 @@
 layout: default
 ---
 
-<div class="strip strip-white strip-diagonal">
-  <div class="container pt-4 pt-md-10">
-    <div class="row justify-content-start">
-      <div class="col-12 col-md-8">
-        <div class="service service-single">
-          <h1 class="title">{{page.title}}</h1>
-          <div class="content">{{page.content}}</div>
-        </div>
-      </div>
+<div class="intro intro-small service-single-hero">
+  <div class="container">
+    <p class="services-kicker">Advisory Service</p>
+    <h1>{{page.title}}</h1>
+  </div>
+</div>
+
+<div class="container pb-6">
+  <div class="row">
+    <div class="col-12 col-lg-8 mb-3">
+      <article class="service service-single service-single-card">
+        <div class="content">{{page.content}}</div>
+      </article>
     </div>
+    <div class="col-12 col-lg-4 mb-3">
+      <aside class="service-single-sidebar">
+        <h2>Other Services</h2>
+        <ul>
+          {% for service in site.services %}
+          {% unless service.url == page.url %}
+          <li><a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a></li>
+          {% endunless %}
+          {% endfor %}
+        </ul>
+        <a class="button button-primary mt-2" href="{{site.baseurl}}/contact/">Discuss your requirements</a>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<div class="container pb-6">
+  <div class="services-cta-panel">
+    <h2 class="title-3 mb-2">Need broader transaction support?</h2>
+    <p>Explore our complete advisory coverage across private equity syndication, M&amp;A advisory, and strategic finance.</p>
+    <a class="button button-secondary mt-1" href="{{site.baseurl}}/services/">View all services</a>
   </div>
 </div>
