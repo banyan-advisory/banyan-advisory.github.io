@@ -2,6 +2,7 @@
 title: Transactions
 layout: default
 bodyClass: page-transactions
+description: Review Banyan Advisory transactions across technology, healthcare and life sciences, and other sectors.
 ---
 
 {% assign tech_recent_count = site.data.tech_transactions | size %}
@@ -35,11 +36,11 @@ bodyClass: page-transactions
     <a href="#sector-healthcare">Healthcare</a>
     <a href="#sector-other">Other</a>
   </div>
-  <div class="transactions-filter" aria-label="Filter sectors">
-    <button type="button" class="is-active" data-sector-filter="all">All sectors</button>
-    <button type="button" data-sector-filter="technology">Technology</button>
-    <button type="button" data-sector-filter="healthcare">Healthcare</button>
-    <button type="button" data-sector-filter="other">Other</button>
+  <div class="transactions-filter" role="group" aria-label="Filter sectors">
+    <button type="button" class="is-active" data-sector-filter="all" aria-pressed="true" aria-controls="sector-technology sector-healthcare sector-other">All sectors</button>
+    <button type="button" data-sector-filter="technology" aria-pressed="false" aria-controls="sector-technology">Technology</button>
+    <button type="button" data-sector-filter="healthcare" aria-pressed="false" aria-controls="sector-healthcare">Healthcare</button>
+    <button type="button" data-sector-filter="other" aria-pressed="false" aria-controls="sector-other">Other</button>
   </div>
 </div>
 

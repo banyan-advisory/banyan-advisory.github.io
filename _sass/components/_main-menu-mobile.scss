@@ -58,7 +58,7 @@ $button-width: 35px;
 
 .main-menu-mobile {
   position: fixed;
-  background: $color-main;
+  background: rgba(44, 44, 44, 0.96);
   top: 0;
   left: 0;
   width: 100%;
@@ -157,4 +157,12 @@ $button-width: 35px;
 
 .lock-scroll {
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-menu-mobile,
+  .main-menu-mobile * {
+    transition: none !important;
+    animation: none !important;
+  }
 }

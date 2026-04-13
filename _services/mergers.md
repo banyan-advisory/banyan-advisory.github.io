@@ -1,8 +1,8 @@
 ---
-title: "Mergers & Acquisition Advisory Services"
+title: "Mergers & Acquisitions Advisory Services"
 ---
 
-Banyan will provide the necessary guidance to its clients on maximum value creation possible during the process and work as the primary strategic advisor throughout the various stages of the transaction.  
+Banyan provides guidance to clients on maximizing value creation through the transaction process and acts as the primary strategic advisor across every stage of the mandate.
 
 ## Typical M&A transactions go through the following stages:  
 - Business Plan Preparation
@@ -18,4 +18,4 @@ Banyan will provide the necessary guidance to its clients on maximum value creat
 - Complete due diligence services
 - Valuation and structuring
 - Complete legal documentation
-- Post acquisition integration services
+- Post-acquisition integration services

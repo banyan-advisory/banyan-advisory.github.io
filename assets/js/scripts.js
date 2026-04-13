@@ -10,6 +10,7 @@ if (menuTrigger && menuContainer) {
     menuTrigger.classList.toggle('is-active', isOpen);
     body.classList.toggle('lock-scroll', isOpen);
     menuTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menuContainer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
   };
 
   menuTrigger.addEventListener('click', function () {
@@ -23,11 +24,23 @@ if (menuTrigger && menuContainer) {
     }
   });
 
+  menuContainer.addEventListener('click', function (event) {
+    if (event.target === menuContainer) {
+      setMenuState(false);
+    }
+  });
+
   for (var i = 0; i < mobileMenuLinks.length; i++) {
     mobileMenuLinks[i].addEventListener('click', function () {
       setMenuState(false);
     });
   }
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 768 && menuContainer.classList.contains('open')) {
+      setMenuState(false);
+    }
+  });
 }
 
 var sectorFilterButtons = document.querySelectorAll('[data-sector-filter]');
@@ -69,7 +82,9 @@ if (sectorFilterButtons.length && transactionSections.length) {
     sectorFilterButtons[k].addEventListener('click', function () {
       var selectedSector = this.getAttribute('data-sector-filter');
       setSectorFilter(selectedSector);
-      window.history.replaceState({}, '', getSectorHash(selectedSector));
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, '', getSectorHash(selectedSector));
+      }
     });
   }
 

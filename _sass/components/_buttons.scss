@@ -15,6 +15,10 @@
   text-decoration: none;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 3px;
+  }
   &:hover {
     color: #fff;
     background-color: lighten($primary, 10%);
@@ -34,5 +38,8 @@
     background: $primary;
     border-color: $primary;
     box-shadow: none;
+  }
+  &:focus-visible {
+    outline-color: $primary;
   }
 }

@@ -16,15 +16,19 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ page_title | escape }}">
   <meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | escape }}">
+  <meta name="theme-color" content="#2c2c2c">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" href="{{site.baseurl}}/images/favicon.png">
   <link href="{{site.baseurl}}/assets/css/style.css" rel="stylesheet">
 </head>
 <body class='page {{page.bodyClass}}'>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   {% include main-menu-mobile.html %}
   <div id="wrapper" class="wrapper">
     {% include header.html headerClass='header-extra' %}
-    {{content}}
+    <main id="main-content" tabindex="-1">
+      {{content}}
+    </main>
   </div>
   {% include footer.html %}
   {% include sub-footer.html %}
