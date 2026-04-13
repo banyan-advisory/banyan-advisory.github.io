@@ -1,9 +1,19 @@
-<div id="main-menu-mobile" class="main-menu-mobile">
+<nav id="main-menu-mobile" class="main-menu-mobile" aria-label="Mobile navigation" aria-hidden="true">
   <ul>
-    <li><a href="{{site.baseurl}}/" class="{% if page.url == '/' %}current{% endif %}">Home</a></li>
-    <li><a href="{{site.baseurl}}/services/" class="{% if page.url contains 'services' %}current{% endif %}">Services</a></li>
-    <li><a href="{{site.baseurl}}/team/" class="{% if page.url contains 'team' %}current{% endif %}">Team</a></li>
-    <li><a href="{{site.baseurl}}/transactions/" class="{% if page.url contains 'transactions' %}current{% endif %}">Transactions</a></li>
-    <li><a href="{{site.baseurl}}/contact/" class="{% if page.url contains 'contact' %}current{% endif %}">Contact</a></li>
+    <li class="{% if page.url == '/' %}active{% endif %}">
+      <a href="{{site.baseurl}}/" {% if page.url == '/' %}class="current" aria-current="page"{% endif %}>Home</a>
+    </li>
+    <li class="{% if page.url contains 'services' %}active{% endif %}">
+      <a href="{{site.baseurl}}/services/" {% if page.url contains 'services' %}class="current" aria-current="page"{% endif %}>Services</a>
+    </li>
+    <li class="{% if page.url contains 'team' %}active{% endif %}">
+      <a href="{{site.baseurl}}/team/" {% if page.url contains 'team' %}class="current" aria-current="page"{% endif %}>Team</a>
+    </li>
+    <li class="{% if page.url contains 'transactions' %}active{% endif %}">
+      <a href="{{site.baseurl}}/transactions/" {% if page.url contains 'transactions' %}class="current" aria-current="page"{% endif %}>Transactions</a>
+    </li>
+    <li class="{% if page.url contains 'contact' %}active{% endif %}">
+      <a href="{{site.baseurl}}/contact/" {% if page.url contains 'contact' %}class="current" aria-current="page"{% endif %}>Contact</a>
+    </li>
   </ul>
-</div>
+</nav>

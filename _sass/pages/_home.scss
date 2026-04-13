@@ -1,20 +1,104 @@
 .page-home {
-  background-image: url('../images/banyan-bg-grey.png');
-  background-repeat: no-repeat;
-  background-size: 115%;
-  background-position: 49px -40px;
-  @include media-breakpoint-up(sm) {
-    background-size: 90%;
-    background-position: 159px -40px;
+  .home-hero {
+    .home-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: $font-weight-bold;
+      color: darken($secondary, 28%);
+      margin-bottom: 10px;
+    }
+    .home-subtitle {
+      color: darken($secondary, 30%);
+      font-size: 1.12rem;
+      max-width: 760px;
+      line-height: 1.65;
+    }
+    .home-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
   }
-  @include media-breakpoint-up(md) {
-    background-size: 70%;
-    background-position: 100% -50px;
+
+  .home-proof-strip {
+    margin-top: -20px;
+    margin-bottom: 10px;
+    .proof-item {
+      border: 1px solid #dcdcdc;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 4px;
+      padding: 14px;
+      height: 100%;
+    }
+    .proof-value {
+      color: $primary;
+      font-size: 1.6rem;
+      font-weight: $font-weight-bold;
+      line-height: 1.2;
+    }
+    .proof-label {
+      color: darken($secondary, 24%);
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+    }
   }
-  @include media-breakpoint-up(lg) {
-    background-size: 60%;
-    background-position: 100% -70px;
+
+  .home-overview {
+    p {
+      color: darken($secondary, 30%);
+      max-width: 68ch;
+      line-height: 1.75;
+    }
   }
+
+  .home-pathways {
+    border: 1px solid #dcdcdc;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 4px;
+    padding: 20px;
+    h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+      color: darken($secondary, 24%);
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: $primary;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom-color: $primary;
+        }
+        &:focus-visible {
+          border-bottom-color: $primary;
+        }
+      }
+    }
+  }
+
+  .home-cta-panel {
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+    padding: 24px;
+    p {
+      color: darken($secondary, 24%);
+      margin-bottom: 14px;
+      max-width: 62ch;
+    }
+  }
+
   .call {
     position: relative;
     overflow: hidden;

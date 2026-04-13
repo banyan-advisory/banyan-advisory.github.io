@@ -1,0 +1,109 @@
+.page-contact {
+  .contact-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    font-weight: $font-weight-bold;
+    color: darken($secondary, 28%);
+    margin-bottom: 10px;
+  }
+
+  .contact-subtitle {
+    color: darken($secondary, 30%);
+    font-size: 1.08rem;
+    max-width: 680px;
+    line-height: 1.65;
+  }
+}
+
+.contact-page {
+  .contact-card {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 22px;
+
+    h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+      color: darken($secondary, 24%);
+    }
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    li {
+      margin-bottom: 8px;
+      color: $primary;
+    }
+  }
+
+  .contact-support-panel {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 20px;
+
+    h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 12px;
+      color: darken($secondary, 24%);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: $primary;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom-color: $primary;
+        }
+        &:focus-visible {
+          border-bottom-color: $primary;
+        }
+      }
+    }
+  }
+
+  .contact-process-panel {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 22px;
+
+    h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+      color: darken($secondary, 24%);
+    }
+
+    ul {
+      margin: 0 0 14px 0;
+      padding-left: 18px;
+      li {
+        margin-bottom: 8px;
+        color: darken($secondary, 24%);
+      }
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: darken($secondary, 24%);
+      line-height: 1.7;
+    }
+  }
+}

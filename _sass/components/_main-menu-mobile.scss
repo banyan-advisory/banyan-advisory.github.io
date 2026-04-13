@@ -58,7 +58,7 @@ $button-width: 35px;
 
 .main-menu-mobile {
   position: fixed;
-  background: $color-main;
+  background: rgba(44, 44, 44, 0.96);
   top: 0;
   left: 0;
   width: 100%;
@@ -113,6 +113,10 @@ $button-width: 35px;
         position: relative;
         color: $color-link;
         text-decoration: none;
+        &:focus-visible {
+          outline: 2px solid $white;
+          outline-offset: 4px;
+        }
         overflow: hidden;
         &:hover:after,
         &:focus:after,
@@ -132,6 +136,10 @@ $button-width: 35px;
           transition: 0.35s;
         }
       }
+      &.active a,
+      a.current {
+        font-weight: $font-weight-bold;
+      }
     }
   }
 }
@@ -149,4 +157,12 @@ $button-width: 35px;
 
 .lock-scroll {
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-menu-mobile,
+  .main-menu-mobile * {
+    transition: none !important;
+    animation: none !important;
+  }
 }

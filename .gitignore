@@ -6,6 +6,8 @@ npm-debug.log
 .jekyll-metadata
 .sass-cache
 _site
+.bundle
+vendor/bundle
 
 # Temporary files
 tmp

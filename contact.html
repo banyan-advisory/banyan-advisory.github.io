@@ -1,32 +1,52 @@
 ---
 title: Contact
 layout: default
-bodyClass: page-home
+bodyClass: page-contact
+description: Contact Banyan Advisory to discuss private equity, M&A, investor relations, or strategic finance requirements.
 ---
+
+{% assign inquiry_subject = 'Advisory Inquiry - Banyan Advisory' | uri_escape %}
 
 <div class="intro intro-small">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Contact</h1>
-      </div>
-    </div>
+    <p class="contact-kicker">Get In Touch</p>
+    <h1>Contact</h1>
+    <p class="contact-subtitle">Share your requirements and we will connect you with the relevant advisory team.</p>
   </div>
 </div>
-<div class="container">
+<div class="container contact-page pb-6">
   <div class="row">
-    <div class="col-12 col-md-8">
-      <ul>
-        <!-- <li><strong>Phone: </strong>{{ site.data.contact.phone }}</li> -->
-        <li><strong>Email: </strong><a href="mailto:{{ site.data.contact.email }}">
-            {{ site.data.contact.email }}</a></li>
-        {% if site.data.contact.address %}
-        <li><strong>Address: </strong>{{ site.data.contact.address }}</li>
-        {% endif %}
-      </ul>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.630288487367!2d78.4203526143294!3d17.429521488053368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb912c22ed7a39%3A0x2c0fc78d18697ad9!2sBanyan+Advisory!5e0!3m2!1sen!2sin!4v1556610333733!5m2!1sen!2sin"
-        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="col-12 col-lg-6 mb-3">
+      <div class="contact-card">
+        <h2>Contact details</h2>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:{{ site.data.contact.email }}?subject={{ inquiry_subject }}">{{ site.data.contact.email }}</a></li>
+        </ul>
+        <a class="button button-primary mt-2" href="mailto:{{ site.data.contact.email }}?subject={{ inquiry_subject }}">Email our team</a>
+      </div>
+      <div class="contact-support-panel mt-2">
+        <h3>Useful links</h3>
+        <ul>
+          <li><a href="{{site.baseurl}}/services/">View advisory services</a></li>
+          <li><a href="{{site.baseurl}}/transactions/">Review transactions</a></li>
+          <li><a href="{{site.baseurl}}/team/">Meet the team</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 mb-3">
+      <div class="contact-process-panel">
+        <h2>What to share in your inquiry</h2>
+        <ul>
+          <li>Transaction or strategic finance objective</li>
+          <li>Sector and company stage</li>
+          <li>Indicative timelines and priorities</li>
+          <li>Any confidentiality requirements</li>
+        </ul>
+        <p>
+          We review each request and connect you with the relevant advisory team members for an initial discussion.
+        </p>
+        <a class="button button-secondary mt-1" href="{{site.baseurl}}/services/">Review services first</a>
+      </div>
     </div>
   </div>
 </div>

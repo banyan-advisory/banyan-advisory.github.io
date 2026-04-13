@@ -2,79 +2,114 @@
 title: Banyan Advisory
 layout: default
 bodyClass: page-home
+description: Advisory-focused investment banking support across private equity syndication, M&A, investor relations, and strategic finance.
 ---
 
-<div class="intro pb-4">
+{% assign tech_recent_count = site.data.tech_transactions | size %}
+{% assign tech_promoter_count = site.data.promoter_tech_transactions | size %}
+{% assign healthcare_recent_count = site.data.healthcare_transactions | size %}
+{% assign healthcare_promoter_count = site.data.promoter_healthcare_transactions | size %}
+{% assign other_count = site.data.other_transactions | size %}
+{% assign total_transactions = tech_recent_count | plus: tech_promoter_count | plus: healthcare_recent_count | plus: healthcare_promoter_count | plus: other_count %}
+
+<div class="intro pb-4 home-hero">
   <div class="container">
+    <p class="home-kicker">Investment Banking Advisory</p>
     <h1>Banyan Advisory</h1>
-    <p>Creating corporate value</p>
+    <p class="home-subtitle">Creating corporate value through private equity syndication, M&amp;A advisory, investor relations, and strategic finance.</p>
+    <div class="home-actions">
+      <a class="button button-primary mt-2" href="{{site.baseurl}}/contact/">Discuss a mandate</a>
+      <a class="button button-secondary mt-2" href="{{site.baseurl}}/transactions/">Review transactions</a>
+    </div>
   </div>
 </div>
 
-<div class="col-lg-8 col-md-12">
-  <div class="container">
-    <p>Banyan Advisory is an Investment Banking firm providing services in the areas of Private Equity Syndication, Mergers
-      &
-      Acquisitions advisory, Investor Relations services and Strategic Finance including restructuring of business. Backed
-      by
-      strong research driven activities, the company concentrates on providing services to small and medium Enterprises
-      seeking accelerated growth and profitability. We aim to create significant value for entrepreneurs and mature
-      companies
-      by helping them execute the right capitalization strategy.
-    </p>
-    <p>
-      Our Services are dedicated to providing our clients with advices of highest quality and focus on quality
-      implementation of the same. Our long standing relationship with the PE Funds across the globe, especially in India
-      helps us to close
-      transactions in aggressive time frames.</p>
+<section class="container home-proof-strip" aria-labelledby="home-proof-heading">
+  <h2 id="home-proof-heading" class="visually-hidden">Banyan Advisory proof points</h2>
+  <div class="row">
+    <div class="col-6 col-md-3 mb-2">
+      <div class="proof-item">
+        <div class="proof-value">{{ total_transactions }}+</div>
+        <div class="proof-label">Disclosed transactions</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 mb-2">
+      <div class="proof-item">
+        <div class="proof-value">{{ site.services | size }}</div>
+        <div class="proof-label">Core advisory offerings</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 mb-2">
+      <div class="proof-item">
+        <div class="proof-value">3</div>
+        <div class="proof-label">Sector clusters covered</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 mb-2">
+      <div class="proof-item">
+        <div class="proof-value">60+</div>
+        <div class="proof-label">Over 60 years combined team experience</div>
+      </div>
+    </div>
   </div>
-  <div class="col-lg-8 col-md-12 text-center">
-    <a class="button button-primary mt-2" href="{{site.baseurl}}/transactions">View our transactions</a>
+</section>
+
+<div class="container pt-4 pt-md-5">
+  <div class="row home-overview">
+    <div class="col-12 col-lg-8 mb-3">
+      <h2 class="title-3 text-dark mb-3">What We Do</h2>
+      <p>
+        Banyan Advisory is an Investment Banking firm providing services in the areas of Private Equity Syndication, Mergers &amp;
+        Acquisitions advisory, Investor Relations services and Strategic Finance including restructuring of business.
+      </p>
+      <p>
+        Backed by strong research-driven activities, we focus on helping small and medium enterprises seeking accelerated growth and
+        profitability, while also supporting mature companies on capitalization strategy and execution.
+      </p>
+      <p>
+        Our long-standing relationships with private equity funds, especially in India, help clients execute transactions in aggressive
+        time frames.
+      </p>
+    </div>
+    <div class="col-12 col-lg-4 mb-3">
+      <div class="home-pathways">
+        <h3>Engagement Pathways</h3>
+        <ul>
+          {% for service in site.services %}
+          <li><a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container pt-5 pb-5 pt-md-7 pb-md-7">
+<section class="container pt-5 pb-5 pt-md-7 pb-md-7" aria-labelledby="home-expertise-heading">
   <div class="row justify-content-center">
     <div class="col-12">
-      <h2 class="title-3 text-dark mb-4">Our Expertise</h2>
+      <h2 id="home-expertise-heading" class="title-3 text-dark mb-4">Our Expertise</h2>
     </div>
     {% for feature in site.data.ma_features %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
       <div class="feature">
-        {% if feature.image %}<div class="feature-image"><img alt="{{ feature.title }} logo"
-            src="{{ feature.image }}" /></div> {% endif %}
-        <h2 class="feature-title">{{ feature.title }}</h2>
+        {% if feature.image %}
+        <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image }}" /></div>
+        {% endif %}
+        <h3 class="feature-title">{{ feature.title }}</h3>
         <div class="feature-content">{{ feature.description }}</div>
       </div>
     </div>
     {% endfor %}
   </div>
   <div class="col-12 text-center">
-    <a class="button button-primary mt-2" href="{{site.baseurl}}/services">View All Services</a>
+    <a class="button button-primary mt-2" href="{{site.baseurl}}/services/">View all services</a>
+  </div>
+</section>
+
+<div class="container pb-6">
+  <div class="home-cta-panel">
+    <h2 class="title-3 mb-2">Need advisory support for your next transaction?</h2>
+    <p>Share your mandate and we will align the right engagement model for your stage and objectives.</p>
+    <a class="button button-primary mt-1" href="{{site.baseurl}}/contact/">Contact Banyan Advisory</a>
   </div>
 </div>
-
-<!-- <div class="container pt-8 pt-md-10">
-  <div class="row justify-content-start"> -->
-    <!-- <div class="col-12">
-      <h2 class="title-3 text-dark mb-3">Our Services</h2>
-    </div>
-    {% for service in site.services %}
-    <div class="col-12 col-md-4 mb-1">
-      <div class="service service-summary">
-        <div class="service-content">
-          <h2 class="service-title">
-            <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
-          </h2>
-          {{ service.content | markdownify | strip_html | truncate: 100 }}
-        </div>
-      </div>
-    </div>
-    {% endfor %} -->
-    <!-- <div class="col-12 text-center">
-      <a class="button button-primary mt-2" href="{{site.baseurl}}/services">View All Services</a>
-    </div> -->
-  </div>
-</div>
-
-

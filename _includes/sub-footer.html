@@ -1,18 +1,12 @@
 <div class="sub-footer-strip">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="sub-footer">
-          <ul>
-            <!-- <li><strong>Phone: </strong>{{ site.data.contact.phone }}</li> -->
-            <li><strong>Email: </strong><a href="mailto:{{ site.data.contact.email }}">
-                {{ site.data.contact.email }}</a></li>
-          </ul>
-          <!-- <ul>
-            <li><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>
-          </ul> -->
-        </div>
-      </div>
+    {% assign inquiry_subject = 'Advisory Inquiry - Banyan Advisory' | uri_escape %}
+    <div class="sub-footer">
+      <p class="sub-footer-copy">© Banyan Securities and Financial Services Pvt. Ltd. {{site.time | date:'%Y'}}. All rights reserved.</p>
+      <ul class="sub-footer-links">
+        <li><a href="{{site.baseurl}}/contact/">Discuss a mandate</a></li>
+        <li><a href="mailto:{{ site.data.contact.email }}?subject={{ inquiry_subject }}">{{ site.data.contact.email }}</a></li>
+      </ul>
     </div>
   </div>
 </div>
