@@ -1,5 +1,6 @@
 ---
 title: 'Private Equity Syndication'
+summary: 'End-to-end private equity syndication support from capitalization strategy and investor outreach to term-sheet negotiation and transaction closure.'
 ---
 
 We provide end-to-end advisory support to companies in high-growth markets on capitalization and recapitalization strategy, helping them pursue defined growth objectives. Typical private equity engagements move through the following phases:

@@ -1,5 +1,6 @@
 ---
 title: "Mergers & Acquisitions Advisory Services"
+summary: 'M&A advisory across strategy, target identification, due diligence, valuation, structuring, documentation support, and post-acquisition integration.'
 ---
 
 Banyan advises clients on maximizing value creation through the transaction lifecycle and serves as the primary strategic advisor across every stage of the mandate.

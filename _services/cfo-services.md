@@ -1,6 +1,7 @@
 ---
 title: 'Strategic Financial Services'
 image: '/services/noun_591323.png'
+summary: 'Strategic finance and governance support to strengthen systems, controls, MIS, treasury, costing, and risk management for the next growth phase.'
 ---
 
 Under this offering, we help organizations prepare for the financial demands of their next growth phase. We follow a structured process to review existing systems, controls, and finance processes, and implement strengthening measures. We also develop practical manuals to support operating discipline, with clearly defined authority and delegation frameworks.
