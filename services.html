@@ -49,12 +49,13 @@ description: Explore Banyan Advisory services including private equity syndicati
     {% for service in site.services %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
       <article class="service service-summary service-summary-card">
+        {% assign service_summary = service.summary | default: service.content | markdownify | strip_html | strip_newlines | truncatewords: 28 %}
         <div class="service-content">
           <p class="service-index">{{ forloop.index }}</p>
           <h3 class="service-title">
             <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
           </h3>
-          <p class="service-excerpt">{{ service.content | markdownify | strip_html | truncate: 180 }}</p>
+          <p class="service-excerpt">{{ service_summary }}</p>
           <a class="service-link" href="{{site.baseurl}}{{ service.url }}">Explore service</a>
         </div>
       </article>
