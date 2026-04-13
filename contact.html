@@ -5,6 +5,8 @@ bodyClass: page-contact
 description: Contact Banyan Advisory to discuss private equity, M&A, investor relations, or strategic finance requirements.
 ---
 
+{% assign inquiry_subject = 'Advisory Inquiry - Banyan Advisory' | uri_escape %}
+
 <div class="intro intro-small">
   <div class="container">
     <p class="contact-kicker">Get In Touch</p>
@@ -19,12 +21,12 @@ description: Contact Banyan Advisory to discuss private equity, M&A, investor re
         <h2>Contact details</h2>
         <ul class="contact-list">
           <!-- <li><strong>Phone: </strong>{{ site.data.contact.phone }}</li> -->
-          <li><strong>Email:</strong> <a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a></li>
+          <li><strong>Email:</strong> <a href="mailto:{{ site.data.contact.email }}?subject={{ inquiry_subject }}">{{ site.data.contact.email }}</a></li>
           {% if site.data.contact.address %}
           <li><strong>Address:</strong> {{ site.data.contact.address }}</li>
           {% endif %}
         </ul>
-        <a class="button button-primary mt-2" href="mailto:{{ site.data.contact.email }}">Email our team</a>
+        <a class="button button-primary mt-2" href="mailto:{{ site.data.contact.email }}?subject={{ inquiry_subject }}">Email our team</a>
       </div>
       <div class="contact-support-panel mt-2">
         <h3>Useful links</h3>
