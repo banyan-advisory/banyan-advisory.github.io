@@ -6,32 +6,43 @@ bodyClass: page-contact
 
 <div class="intro intro-small">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Contact</h1>
-      </div>
-    </div>
+    <p class="contact-kicker">Get In Touch</p>
+    <h1>Contact</h1>
+    <p class="contact-subtitle">Share your requirements and we will connect you with the relevant advisory team.</p>
   </div>
 </div>
 <div class="container contact-page pb-6">
   <div class="row">
-    <div class="col-12 col-lg-8">
-      <ul class="contact-list">
-        <!-- <li><strong>Phone: </strong>{{ site.data.contact.phone }}</li> -->
-        <li><strong>Email: </strong><a href="mailto:{{ site.data.contact.email }}">
-            {{ site.data.contact.email }}</a></li>
-        {% if site.data.contact.address %}
-        <li><strong>Address: </strong>{{ site.data.contact.address }}</li>
-        {% endif %}
-      </ul>
+    <div class="col-12 col-lg-5 mb-3">
+      <div class="contact-card">
+        <h2>Contact details</h2>
+        <ul class="contact-list">
+          <!-- <li><strong>Phone: </strong>{{ site.data.contact.phone }}</li> -->
+          <li><strong>Email:</strong> <a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a></li>
+          {% if site.data.contact.address %}
+          <li><strong>Address:</strong> {{ site.data.contact.address }}</li>
+          {% endif %}
+        </ul>
+        <a class="button button-primary mt-2" href="mailto:{{ site.data.contact.email }}">Email our team</a>
+      </div>
+      <div class="contact-support-panel mt-2">
+        <h3>Useful links</h3>
+        <ul>
+          <li><a href="{{site.baseurl}}/services/">View advisory services</a></li>
+          <li><a href="{{site.baseurl}}/transactions/">Review transactions</a></li>
+          <li><a href="{{site.baseurl}}/team/">Meet the team</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-7 mb-3">
       <div class="contact-map">
-      <iframe
-        title="Banyan Advisory office location"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.630288487367!2d78.4203526143294!3d17.429521488053368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb912c22ed7a39%3A0x2c0fc78d18697ad9!2sBanyan+Advisory!5e0!3m2!1sen!2sin!4v1556610333733!5m2!1sen!2sin"
-        frameborder="0"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen></iframe>
+        <iframe
+          title="Banyan Advisory office location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.630288487367!2d78.4203526143294!3d17.429521488053368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb912c22ed7a39%3A0x2c0fc78d18697ad9!2sBanyan+Advisory!5e0!3m2!1sen!2sin!4v1556610333733!5m2!1sen!2sin"
+          frameborder="0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
       </div>
     </div>
   </div>

@@ -15,9 +15,39 @@
     background-size: 60%;
     background-position: 100% -110px;
   }
+
+  .contact-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    font-weight: $font-weight-bold;
+    color: darken($secondary, 28%);
+    margin-bottom: 10px;
+  }
+
+  .contact-subtitle {
+    color: darken($secondary, 24%);
+    font-size: 1.08rem;
+    max-width: 680px;
+  }
 }
 
 .contact-page {
+  .contact-card {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 22px;
+
+    h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+      color: darken($secondary, 24%);
+    }
+  }
+
   .contact-list {
     list-style: none;
     padding: 0;
@@ -28,12 +58,51 @@
     }
   }
 
-  .contact-map iframe {
-    border: 0;
-    width: 100%;
-    min-height: 300px;
-    @include media-breakpoint-up(md) {
-      min-height: 420px;
+  .contact-support-panel {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+
+    h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 12px;
+      color: darken($secondary, 24%);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: $primary;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom-color: $primary;
+        }
+      }
+    }
+  }
+
+  .contact-map {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+
+    iframe {
+      border: 0;
+      width: 100%;
+      min-height: 320px;
+      @include media-breakpoint-up(md) {
+        min-height: 520px;
+      }
     }
   }
 }

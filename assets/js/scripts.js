@@ -34,11 +34,27 @@ var sectorFilterButtons = document.querySelectorAll('[data-sector-filter]');
 var transactionSections = document.querySelectorAll('.transaction-section[data-sector]');
 
 if (sectorFilterButtons.length && transactionSections.length) {
+  var getSectorHash = function (sector) {
+    if (sector === 'technology') return '#sector-technology';
+    if (sector === 'healthcare') return '#sector-healthcare';
+    if (sector === 'other') return '#sector-other';
+    return '#transactions-top';
+  };
+
+  var getSectorFromHash = function () {
+    var hash = window.location.hash;
+    if (hash === '#sector-technology') return 'technology';
+    if (hash === '#sector-healthcare') return 'healthcare';
+    if (hash === '#sector-other') return 'other';
+    return 'all';
+  };
+
   var setSectorFilter = function (sector) {
     for (var i = 0; i < sectorFilterButtons.length; i++) {
       var button = sectorFilterButtons[i];
       var isActive = button.getAttribute('data-sector-filter') === sector;
       button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     }
 
     for (var j = 0; j < transactionSections.length; j++) {
@@ -51,7 +67,11 @@ if (sectorFilterButtons.length && transactionSections.length) {
 
   for (var k = 0; k < sectorFilterButtons.length; k++) {
     sectorFilterButtons[k].addEventListener('click', function () {
-      setSectorFilter(this.getAttribute('data-sector-filter'));
+      var selectedSector = this.getAttribute('data-sector-filter');
+      setSectorFilter(selectedSector);
+      window.history.replaceState({}, '', getSectorHash(selectedSector));
     });
   }
+
+  setSectorFilter(getSectorFromHash());
 }
