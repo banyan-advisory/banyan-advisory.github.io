@@ -10,7 +10,7 @@ description: Explore Banyan Advisory services including private equity syndicati
     <p class="services-kicker">Advisory Offerings</p>
     <h1>Investment Banking Services</h1>
     <p class="services-subtitle">
-      Our business creates significant value for companies by helping them execute the right capitalization strategy.
+      We help companies execute the right capitalization strategy with disciplined transaction planning and investor engagement.
     </p>
     <div class="services-hero-actions">
       <a class="button button-primary mt-2" href="{{site.baseurl}}/contact/">Discuss your requirements</a>
@@ -36,7 +36,7 @@ description: Explore Banyan Advisory services including private equity syndicati
         <h3>Core areas</h3>
         <ul>
           {% for service in site.services %}
-          <li>{{ service.title }}</li>
+          <li><a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a></li>
           {% endfor %}
         </ul>
       </div>
@@ -51,11 +51,11 @@ description: Explore Banyan Advisory services including private equity syndicati
       <article class="service service-summary service-summary-card">
         <div class="service-content">
           <p class="service-index">{{ forloop.index }}</p>
-          <h2 class="service-title">
+          <h3 class="service-title">
             <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
-          </h2>
+          </h3>
           <p class="service-excerpt">{{ service.content | markdownify | strip_html | truncate: 180 }}</p>
-          <a class="service-link" href="{{site.baseurl}}{{ service.url }}">View service details</a>
+          <a class="service-link" href="{{site.baseurl}}{{ service.url }}">Explore service</a>
         </div>
       </article>
     </div>

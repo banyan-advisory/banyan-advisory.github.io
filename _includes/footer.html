@@ -1,19 +1,28 @@
-<div class="footer-strip">
+<footer class="footer-strip">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="footer">
-          <h3 class="footer-title">{{site.title}}</h3>
-          <ul class="footer-menu">
-            <li><a href="{{site.baseurl}}/">Home</a></li>
-            <li><a href="{{site.baseurl}}/services/">Services</a></li>
-            <li><a href="{{site.baseurl}}/team/">Team</a></li>
-            <li><a href="{{site.baseurl}}/transactions/">Transactions</a></li>
-            <li><a href="{{site.baseurl}}/contact/">Contact</a></li>
-            <li class="copyright">© Banyan Securities and Financial Services Pvt. Ltd. {{site.time | date:'%Y'}}</li>
-          </ul>
-        </div>
+    {% assign inquiry_subject = 'Advisory Inquiry - Banyan Advisory' | uri_escape %}
+    <div class="footer">
+      <div class="footer-brand">
+        <h2 class="footer-title">{{site.title}}</h2>
+        <p class="footer-description">
+          Investment banking advisory across private equity syndication, M&amp;A advisory, investor relations, and strategic finance.
+        </p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h3>Explore</h3>
+        <ul class="footer-menu">
+          <li><a href="{{site.baseurl}}/">Home</a></li>
+          <li><a href="{{site.baseurl}}/services/">Services</a></li>
+          <li><a href="{{site.baseurl}}/team/">Team</a></li>
+          <li><a href="{{site.baseurl}}/transactions/">Transactions</a></li>
+          <li><a href="{{site.baseurl}}/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p><a href="mailto:{{ site.data.contact.email }}?subject={{ inquiry_subject }}">{{ site.data.contact.email }}</a></p>
+        <p class="footer-contact-note">Confidential discussions are welcome.</p>
       </div>
     </div>
   </div>
-</div>
+</footer>

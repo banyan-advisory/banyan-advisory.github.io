@@ -1,21 +1,4 @@
 .page-home {
-  background-image: url('../images/banyan-bg-grey.png');
-  background-repeat: no-repeat;
-  background-size: 115%;
-  background-position: 49px -40px;
-  @include media-breakpoint-up(sm) {
-    background-size: 90%;
-    background-position: 159px -40px;
-  }
-  @include media-breakpoint-up(md) {
-    background-size: 70%;
-    background-position: 100% -50px;
-  }
-  @include media-breakpoint-up(lg) {
-    background-size: 60%;
-    background-position: 100% -70px;
-  }
-
   .home-hero {
     .home-kicker {
       text-transform: uppercase;
@@ -26,9 +9,10 @@
       margin-bottom: 10px;
     }
     .home-subtitle {
-      color: darken($secondary, 26%);
+      color: darken($secondary, 30%);
       font-size: 1.12rem;
-      max-width: 700px;
+      max-width: 760px;
+      line-height: 1.65;
     }
     .home-actions {
       display: flex;
@@ -42,7 +26,7 @@
     margin-bottom: 10px;
     .proof-item {
       border: 1px solid #dcdcdc;
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 4px;
       padding: 14px;
       height: 100%;
@@ -54,7 +38,7 @@
       line-height: 1.2;
     }
     .proof-label {
-      color: darken($secondary, 18%);
+      color: darken($secondary, 24%);
       font-size: 0.83rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -64,13 +48,15 @@
 
   .home-overview {
     p {
-      color: darken($secondary, 26%);
+      color: darken($secondary, 30%);
+      max-width: 68ch;
+      line-height: 1.75;
     }
   }
 
   .home-pathways {
     border: 1px solid #dcdcdc;
-    background: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 4px;
     padding: 20px;
     h3 {
@@ -94,6 +80,9 @@
         &:hover {
           border-bottom-color: $primary;
         }
+        &:focus-visible {
+          border-bottom-color: $primary;
+        }
       }
     }
   }
@@ -101,11 +90,12 @@
   .home-cta-panel {
     border: 1px solid #d4d4d4;
     border-radius: 4px;
-    background: #fff;
+    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
     padding: 24px;
     p {
-      color: darken($secondary, 20%);
+      color: darken($secondary, 24%);
       margin-bottom: 14px;
+      max-width: 62ch;
     }
   }
 

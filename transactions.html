@@ -31,17 +31,18 @@ description: Review Banyan Advisory transactions across technology, healthcare a
 </div>
 
 <div class="container transactions-toolbar">
-  <div class="transactions-jump">
+  <nav class="transactions-jump" aria-label="Jump to transaction sector">
     <a href="#sector-technology">Technology</a>
     <a href="#sector-healthcare">Healthcare</a>
     <a href="#sector-other">Other</a>
-  </div>
+  </nav>
   <div class="transactions-filter" role="group" aria-label="Filter sectors">
     <button type="button" class="is-active" data-sector-filter="all" aria-pressed="true" aria-controls="sector-technology sector-healthcare sector-other">All sectors</button>
     <button type="button" data-sector-filter="technology" aria-pressed="false" aria-controls="sector-technology">Technology</button>
     <button type="button" data-sector-filter="healthcare" aria-pressed="false" aria-controls="sector-healthcare">Healthcare</button>
     <button type="button" data-sector-filter="other" aria-pressed="false" aria-controls="sector-other">Other</button>
   </div>
+  <p class="transactions-filter-status visually-hidden" aria-live="polite"></p>
 </div>
 
 <section id="sector-technology" class="container transaction-section pt-4 pb-5" data-sector="technology">
@@ -72,7 +73,7 @@ description: Review Banyan Advisory transactions across technology, healthcare a
 <section id="sector-healthcare" class="container transaction-section pt-4 pb-5" data-sector="healthcare">
   <div class="row">
     <div class="col-12 d-flex justify-content-between align-items-end mb-3 flex-wrap">
-      <h2 class="title-3 text-dark mb-2">Healthcare &amp; Lifesciences Transactions</h2>
+      <h2 class="title-3 text-dark mb-2">Healthcare &amp; Life Sciences Transactions</h2>
       <a class="section-back-link" href="#transactions-top">Back to top</a>
     </div>
     <div class="col-12">

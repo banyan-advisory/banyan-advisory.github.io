@@ -8,7 +8,7 @@ description: Meet Banyan Advisory's leadership and transaction team supporting s
 <div class="intro team-hero">
   <div class="container">
     <p class="team-kicker">Leadership &amp; Execution</p>
-    <h1>Meet The Team</h1>
+    <h1>Meet the Team</h1>
     <p class="team-subtitle">
       Our experienced investment bankers and consultants support businesses at every stage of growth, from strategic preparation to transaction closure.
     </p>
@@ -56,10 +56,10 @@ description: Meet Banyan Advisory's leadership and transaction team supporting s
         </div>
         {% endif %}
         <div class="team-meta">
-          <h2 class="team-name">{{ team.title }}</h2>
+          <h3 class="team-name">{{ team.title }}</h3>
           <p class="team-description">{{ team.jobtitle }}</p>
           {% if team.linkedinurl %}
-          <a target="_blank" rel="noopener noreferrer" href="{{ team.linkedinurl }}">LinkedIn profile</a>
+          <a target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile for {{ team.title }}" href="{{ team.linkedinurl }}">LinkedIn profile</a>
           {% endif %}
         </div>
         <div class="team-content">{{ team.content }}</div>

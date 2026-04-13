@@ -45,6 +45,7 @@ if (menuTrigger && menuContainer) {
 
 var sectorFilterButtons = document.querySelectorAll('[data-sector-filter]');
 var transactionSections = document.querySelectorAll('.transaction-section[data-sector]');
+var filterStatus = document.querySelector('.transactions-filter-status');
 
 if (sectorFilterButtons.length && transactionSections.length) {
   var getSectorHash = function (sector) {
@@ -63,6 +64,11 @@ if (sectorFilterButtons.length && transactionSections.length) {
   };
 
   var setSectorFilter = function (sector) {
+    var statusText = 'Showing all sectors';
+    if (sector === 'technology') statusText = 'Showing technology transactions';
+    if (sector === 'healthcare') statusText = 'Showing healthcare transactions';
+    if (sector === 'other') statusText = 'Showing other transactions';
+
     for (var i = 0; i < sectorFilterButtons.length; i++) {
       var button = sectorFilterButtons[i];
       var isActive = button.getAttribute('data-sector-filter') === sector;
@@ -75,6 +81,10 @@ if (sectorFilterButtons.length && transactionSections.length) {
       var matchesSector = section.getAttribute('data-sector') === sector;
       var shouldShow = sector === 'all' || matchesSector;
       section.style.display = shouldShow ? '' : 'none';
+    }
+
+    if (filterStatus) {
+      filterStatus.textContent = statusText;
     }
   };
 

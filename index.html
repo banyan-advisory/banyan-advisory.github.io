@@ -24,7 +24,8 @@ description: Advisory-focused investment banking support across private equity s
   </div>
 </div>
 
-<div class="container home-proof-strip">
+<section class="container home-proof-strip" aria-labelledby="home-proof-heading">
+  <h2 id="home-proof-heading" class="visually-hidden">Banyan Advisory proof points</h2>
   <div class="row">
     <div class="col-6 col-md-3 mb-2">
       <div class="proof-item">
@@ -51,7 +52,7 @@ description: Advisory-focused investment banking support across private equity s
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <div class="container pt-4 pt-md-5">
   <div class="row home-overview">
@@ -83,10 +84,10 @@ description: Advisory-focused investment banking support across private equity s
   </div>
 </div>
 
-<div class="container pt-5 pb-5 pt-md-7 pb-md-7">
+<section class="container pt-5 pb-5 pt-md-7 pb-md-7" aria-labelledby="home-expertise-heading">
   <div class="row justify-content-center">
     <div class="col-12">
-      <h2 class="title-3 text-dark mb-4">Our Expertise</h2>
+      <h2 id="home-expertise-heading" class="title-3 text-dark mb-4">Our Expertise</h2>
     </div>
     {% for feature in site.data.ma_features %}
     <div class="col-12 col-md-6 col-lg-4 mb-2">
@@ -94,7 +95,7 @@ description: Advisory-focused investment banking support across private equity s
         {% if feature.image %}
         <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image }}" /></div>
         {% endif %}
-        <h2 class="feature-title">{{ feature.title }}</h2>
+        <h3 class="feature-title">{{ feature.title }}</h3>
         <div class="feature-content">{{ feature.description }}</div>
       </div>
     </div>
@@ -103,7 +104,7 @@ description: Advisory-focused investment banking support across private equity s
   <div class="col-12 text-center">
     <a class="button button-primary mt-2" href="{{site.baseurl}}/services/">View all services</a>
   </div>
-</div>
+</section>
 
 <div class="container pb-6">
   <div class="home-cta-panel">

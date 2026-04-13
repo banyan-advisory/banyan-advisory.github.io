@@ -1,21 +1,4 @@
 .page-services-list {
-  background-image: url('../images/banyan-bg-grey.png');
-  background-repeat: no-repeat;
-  background-size: 115%;
-  background-position: 49px -40px;
-  @include media-breakpoint-up(sm) {
-    background-size: 90%;
-    background-position: 159px -40px;
-  }
-  @include media-breakpoint-up(md) {
-    background-size: 85%;
-    background-position: 199px -80px;
-  }
-  @include media-breakpoint-up(lg) {
-    background-size: 60%;
-    background-position: 100% -110px;
-  }
-
   .services-hero {
     .services-kicker {
       text-transform: uppercase;
@@ -27,9 +10,10 @@
     }
 
     .services-subtitle {
-      color: darken($secondary, 24%);
+      color: darken($secondary, 30%);
       font-size: 1.1rem;
       max-width: 720px;
+      line-height: 1.65;
     }
 
     .services-hero-actions {
@@ -40,12 +24,14 @@
   }
 
   .services-overview p {
-    color: darken($secondary, 24%);
+    color: darken($secondary, 30%);
+    max-width: 70ch;
+    line-height: 1.75;
   }
 
   .services-highlights {
     border: 1px solid #dcdcdc;
-    background: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 4px;
     padding: 20px;
     height: 100%;
@@ -64,7 +50,17 @@
       margin: 0;
       li {
         margin-bottom: 10px;
+      }
+      a {
         color: $primary;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom-color: $primary;
+        }
+        &:focus-visible {
+          border-bottom-color: $primary;
+        }
       }
     }
   }
@@ -72,11 +68,12 @@
   .services-cta-panel {
     border: 1px solid #d4d4d4;
     border-radius: 4px;
-    background: #fff;
+    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
     padding: 24px;
     p {
-      color: darken($secondary, 20%);
+      color: darken($secondary, 24%);
       margin-bottom: 14px;
+      max-width: 62ch;
     }
   }
 }

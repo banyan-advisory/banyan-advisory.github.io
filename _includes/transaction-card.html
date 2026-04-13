@@ -3,18 +3,18 @@
   <div class="transaction-parties">
     {% if item.image1 %}
     <div class="feature-image">
-      <img alt="{{ item.client1 }}" src="{{ item.image1 }}" />
+      <img alt="{{ item.client1 }}" class="transaction-logo" src="{{ item.image1 }}" />
     </div>
     {% elsif item.client1 %}
-    <h3 class="transaction-party">{{ item.client1 }}</h3>
+    <p class="transaction-party">{{ item.client1 }}</p>
     {% endif %}
 
     {% if item.image2 %}
     <div class="feature-image">
-      <img alt="{{ item.client2 }}" src="{{ item.image2 }}" />
+      <img alt="{{ item.client2 }}" class="transaction-logo" src="{{ item.image2 }}" />
     </div>
     {% elsif item.client2 %}
-    <h3 class="transaction-party">{{ item.client2 }}</h3>
+    <p class="transaction-party">{{ item.client2 }}</p>
     {% endif %}
   </div>
 
